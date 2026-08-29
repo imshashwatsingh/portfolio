@@ -270,6 +270,108 @@ button:focus {
   text-align: left;
 }
 
+.home-badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  margin-bottom: 18px;
+  font-size: 0.95em;
+  color: #e3c8f5;
+  background: rgba(199, 112, 240, 0.12);
+  border: 1px solid rgba(199, 112, 240, 0.45);
+  border-radius: 30px;
+  letter-spacing: 0.4px;
+  backdrop-filter: blur(4px);
+}
+
+.home-type-wrap {
+  padding: 50px 0 10px 0 !important;
+  text-align: left;
+}
+
+.home-cta {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  border-radius: 30px !important;
+  padding: 0.55rem 1.6rem !important;
+  font-weight: 600 !important;
+  font-size: 1.05em !important;
+  transition: all 0.3s ease 0s !important;
+}
+
+.home-btn-primary {
+  background-color: #c770f0 !important;
+  border-color: #c770f0 !important;
+  color: #fff !important;
+}
+
+.home-btn-primary:hover {
+  background-color: #b353e0 !important;
+  border-color: #b353e0 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(199, 112, 240, 0.45);
+}
+
+.home-btn-outline {
+  background-color: transparent !important;
+  border: 1.5px solid #c770f0 !important;
+  color: #e3c8f5 !important;
+}
+
+.home-btn-outline:hover {
+  background-color: rgba(199, 112, 240, 0.15) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 767px) {
+  .home-cta {
+    justify-content: center;
+  }
+  .home-type-wrap {
+    padding: 30px 0 10px 0 !important;
+  }
+}
+
+/* Home stats band */
+.home-stats-row {
+  margin-top: 35px !important;
+  justify-content: center !important;
+}
+
+.home-stat {
+  text-align: center !important;
+  padding: 18px 10px !important;
+  margin: 8px 6px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(199, 112, 240, 0.25) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease 0s !important;
+}
+
+.home-stat:hover {
+  transform: translateY(-4px);
+  border-color: rgba(199, 112, 240, 0.6) !important;
+  box-shadow: 0 10px 24px rgba(199, 112, 240, 0.25);
+}
+
+.home-stat-value {
+  color: #c770f0 !important;
+  font-size: 1.8em !important;
+  font-weight: 700 !important;
+  margin-bottom: 4px !important;
+}
+
+.home-stat-label {
+  color: #cbb9e0 !important;
+  font-size: 0.95em !important;
+  margin-bottom: 0 !important;
+}
+
 .heading {
   font-size: 2.4em !important;
   padding-left: 50px !important;
@@ -308,6 +410,23 @@ button:focus {
 .myAvtar {
   justify-content: center !important;
   padding-top: 9em !important;
+}
+
+.home-bot-col {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 4em !important;
+}
+
+.bot3d-canvas {
+  filter: drop-shadow(0 12px 30px rgba(199, 112, 240, 0.35));
+}
+
+@media (max-width: 767px) {
+  .home-bot-col {
+    padding-top: 1em !important;
+  }
 }
 
 @media (max-width: 767px) {

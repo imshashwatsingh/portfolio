@@ -120,6 +120,25 @@ function Home2() {
             </ul>
           </Col>
         </Row>
+
+        {/* <Row className="home-stats-row">
+          <Col xs={6} md={3} className="home-stat">
+            <h3 className="home-stat-value">57+</h3>
+            <p className="home-stat-label">Repositories</p>
+          </Col>
+          <Col xs={6} md={3} className="home-stat">
+            <h3 className="home-stat-value">8.7</h3>
+            <p className="home-stat-label">MCA CGPA '26</p>
+          </Col>
+          <Col xs={6} md={3} className="home-stat">
+            <h3 className="home-stat-value">MERN</h3>
+            <p className="home-stat-label">Full-Stack</p>
+          </Col>
+          <Col xs={6} md={3} className="home-stat">
+            <h3 className="home-stat-value">AI</h3>
+            <p className="home-stat-label">Native Engineer</p>
+          </Col>
+        </Row> */}
       </Container>
     </Container>
   );
