@@ -1,38 +1,85 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { CgWebsite } from "react-icons/cg";
-import { BsGithub } from "react-icons/bs";
+import { BsGithub, BsArrowRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { AiOutlineEye } from "react-icons/ai";
 
 function ProjectCards(props) {
+  const {
+    imgPath,
+    title,
+    subtitle,
+    description,
+    techStack = [],
+    ghLink,
+    demoLink,
+    detailLink,
+    badge,
+    stats,
+    isBlog,
+  } = props;
+
   return (
     <Card className="project-card-view">
-      <Card.Img variant="top" src={props.imgPath} alt="card-img" />
-      <Card.Body>
-        <Card.Title>{props.title}</Card.Title>
-        <Card.Text style={{ textAlign: "justify" }}>
-          {props.description}
-        </Card.Text>
-        <Button variant="primary" href={props.ghLink} target="_blank">
-          <BsGithub /> &nbsp;
-          {props.isBlog ? "Blog" : "GitHub"}
-        </Button>
-        {"\n"}
-        {"\n"}
+      <div className="project-card-img-wrap">
+        <Card.Img variant="top" src={imgPath} alt={`${title} preview`} />
+        {badge && <span className="project-card-badge">{badge}</span>}
+      </div>
 
-        {/* If the component contains Demo link and if it's not a Blog then, it will render the below component  */}
+      <Card.Body className="project-card-body">
+        <Card.Title className="project-card-title">{title}</Card.Title>
+        {subtitle && <p className="project-card-subtitle">{subtitle}</p>}
 
-        {!props.isBlog && props.demoLink && (
-          <Button
-            variant="primary"
-            href={props.demoLink}
-            target="_blank"
-            style={{ marginLeft: "10px" }}
-          >
-            <CgWebsite /> &nbsp;
-            {"Demo"}
-          </Button>
+        <Card.Text className="project-card-desc">{description}</Card.Text>
+
+        {techStack.length > 0 && (
+          <div className="project-card-tech">
+            {techStack.map((tech) => (
+              <span key={tech} className="project-tech-pill">
+                {tech}
+              </span>
+            ))}
+          </div>
         )}
+
+        {stats && stats.length > 0 && (
+          <div className="project-card-stats">
+            {stats.map((s) => (
+              <span key={s} className="project-stat-pill">
+                {s}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <div className="project-card-actions">
+          {detailLink && (
+            <Link to={detailLink} className="project-btn project-btn-case">
+              <AiOutlineEye /> &nbsp; View Details <BsArrowRight style={{ marginLeft: 4 }} />
+            </Link>
+          )}
+          <div className="project-btn-row">
+            <a
+              href={ghLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="project-btn project-btn-gh"
+            >
+              <BsGithub /> &nbsp; {isBlog ? "Blog" : "GitHub"}
+            </a>
+            {!isBlog && demoLink && (
+              <a
+                href={demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-btn project-btn-demo"
+              >
+                <CgWebsite /> &nbsp; Live Demo
+              </a>
+            )}
+          </div>
+        </div>
       </Card.Body>
     </Card>
   );
